@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include "mathC.h"
 
+float absolut(float num){
+	if(num >= 0)
+		return num;
+	else
+		return num*(-1);
+}
 
 void raiz2 (float num){
 	float result = 0;
@@ -38,6 +44,24 @@ float eleva(float num, int pot){
 	}
 }
 
+int aproxima(float num){
+	int num2 = absolut(num);
+	float resultado = absolut(num) - num2;
+	if(num >= 0){
+		if(resultado >= 0.5)
+			return num2+1;
+		else
+			return num2;	
+	}else{
+		if(resultado >= 0.5)
+			return (num2+1)*(-1);
+		else
+			return (num2)*(-1);
+	}
+	
+}
+
+
 
 int main(){
 	/*float num1;
@@ -46,10 +70,9 @@ int main(){
 	raiz2(num1);
 	*/
 	float num1;
-	int exp;
-	printf("Digite um número e o expoente: ");
-	scanf("%f %d", &num1, &exp);
-	printf("\n%f\n", eleva(num1, exp));
+	printf("Digite um número: ");
+	scanf("%f", &num1);
+	printf("O valor aproximado de [%f] é igual a %d\n", num1,aproxima(num1));
     return 0;
 }
 
