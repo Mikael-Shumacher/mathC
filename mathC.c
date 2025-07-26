@@ -4,31 +4,15 @@
 #include <stdio.h>
 #include "mathC.h"
 
+
+
+
 float absolut(float num){
 	if(num >= 0)
 		return num;
 	else
 		return num*(-1);
 }
-
-void raiz2 (float num){
-	float result = 0;
-	int cont = 1;
-	while((result*result) != num){
-		if((result * result) > num){
-			result = 0;
-			cont = cont/10; 
-		}
-		if(num < 0){
-			printf("Não existe raiz quadrada de número negativo, no conjunto dos Reais");
-			break;
-		}
-		result += cont;
-		printf("%f\n", result);
-	}
-	printf("\n%f\n", result);
-}
-
 
 float eleva(float num, int pot){
 	float num2 = 1;
@@ -42,6 +26,24 @@ float eleva(float num, int pot){
 		}
 		return num2;
 	}
+}
+
+void raiz2 (float num){
+	float result = 0;
+	int cont = 1;
+	while(eleva(result, 2) != num){
+		if((result * result) > num){
+			result = 0;
+			cont = cont/10; 
+		}
+		if(num < 0){
+			printf("Não existe raiz quadrada de número negativo, no conjunto dos Reais");
+			break;
+		}
+		result += cont;
+		printf("%f\n", result);
+	}
+	printf("\n%f\n", result);
 }
 
 int aproxima(float num){
