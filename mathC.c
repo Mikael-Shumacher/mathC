@@ -28,22 +28,27 @@ float eleva(float num, int pot){
 	}
 }
 
-void raiz2 (float num){
-	float result = 0;
-	int cont = 1;
-	while(eleva(result, 2) != num){
-		if((result * result) > num){
-			result = 0;
-			cont = cont/10; 
-		}
-		if(num < 0){
-			printf("Não existe raiz quadrada de número negativo, no conjunto dos Reais");
-			break;
-		}
-		result += cont;
-		printf("%f\n", result);
+float raiz2 (float num){
+	if(num < 0){
+		printf("Não existe raiz quadrada de número negativo, no conjunto dos Reais");
+		return num;
 	}
-	printf("\n%f\n", result);
+	float result = 0;
+	float cont = 1;
+	float precisao = 0.0001;
+	while((eleva(result, 2)) != num){
+		if((eleva(result, 2)) > num){
+			if(cont >= precisao)
+				cont /= 10;
+			result -= cont;
+		}
+		else if((eleva(result, 2)) < num){
+			result += cont;
+		}
+		if((eleva(result, 2)) > num && (eleva(result, 2)) < (num + precisao))
+			break;
+	}
+	return result;
 }
 
 int aproxima(float num){
@@ -66,16 +71,15 @@ int aproxima(float num){
 
 
 int main(){
-	/*float num1;
+	float num1;
 	printf("Digite um número para calcularmos a raiz quadrada: ");
 	scanf("%f", &num1);
-	raiz2(num1);
-	*/
-	float num1;
+	printf("Resultado: %f\t Quadrado:%f ", raiz2(num1), eleva(raiz2(num1), 2));
+	/*float num1;
 	printf("Digite um número: ");
 	scanf("%f", &num1);
-	printf("O valor aproximado de [%f] é igual a %d\n", num1,aproxima(num1));
-    return 0;
+	printf("O valor aproximado de [%f] é igual a %d\n", num1,aproxima(num1))*/;
+	return 0;
 }
 
 
