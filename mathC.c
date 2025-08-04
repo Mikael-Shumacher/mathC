@@ -45,8 +45,9 @@ float raiz2 (float num){
 		else if((eleva(result, 2)) < num){
 			result += cont;
 		}
-		if((eleva(result, 2)) > num && (eleva(result, 2)) < (num + precisao))
+		if((eleva(result, 2) - num) > 0 && (eleva(result, 2) - num) < 0.01){
 			break;
+		}
 	}
 	return result;
 }
