@@ -70,6 +70,14 @@ int aproxima(float num){
 }
 
 
+float baskhara(float a, float b, float c){
+	float delta,x1,x2;
+	delta = (b*b)+(4*a*c);
+	x1 = ((-1*b)+(raiz2(delta)))/(2*a);		
+	x2 = ((-1*b)-(raiz2(delta)))/(2*a);	
+	return x1, x2;
+}
+
 
 int main(){
 	float num1;
