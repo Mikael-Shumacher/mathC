@@ -4,6 +4,25 @@
 #include <stdio.h>
 #include "mathC.h"
 
+void lerint(char string[255], int variavel){
+	printf(string);
+	scanf("%d", &variavel);
+	printf("\n");
+}
+
+
+void lerfloat(char string[255], float variavel){
+	printf(string);
+	scanf("%f", &variavel);
+	printf("\n");
+}
+
+
+void lerchar(char string[255], char variavel){
+	printf(string);
+	scanf("%c", &variavel);
+	printf("\n");
+}
 
 
 
