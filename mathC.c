@@ -86,12 +86,11 @@ int aproxima(float num){
 }
 
 
-float baskhara(float a, float b, float c){
-	float delta,x1,x2;
-	delta = (b*b)+(4*a*c);
-	x1 = ((-1*b)+(raiz2(delta)))/(2*a);		
-	x2 = ((-1*b)-(raiz2(delta)))/(2*a);	
-	return x1, x2;
+void baskhara(float a, float b, float c, float *x1, float *x2){
+	float delta;
+	delta = (b*b)-(4*a*c);
+	*x1 = ((-1*b)+(raiz2(delta)))/(2*a);		
+	*x2 = ((-1*b)-(raiz2(delta)))/(2*a);	
 }
 
 float sen(float rad){
@@ -117,8 +116,10 @@ void grafico(){
 
 
 int main(){
-	float x1, x2 = baskhara(2, 3, 5);
-
+	float x1, x2;
+	baskhara(1, 2, -15, &x1, &x2);
+	printf("%f \n", x1);
+	printf("%f \n", x2);
 	return 0;
 }
 
