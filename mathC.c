@@ -10,20 +10,17 @@ void lerint(char string[255], int variavel){
 	printf("\n");
 }
 
-
 void lerfloat(char string[255], float variavel){
 	printf(string);
 	scanf("%f", &variavel);
 	printf("\n");
 }
 
-
 void lerchar(char string[255], char variavel){
 	printf(string);
 	scanf("%c", &variavel);
 	printf("\n");
 }
-
 
 
 float absolut(float num){
@@ -97,16 +94,31 @@ float baskhara(float a, float b, float c){
 	return x1, x2;
 }
 
+float sen(float rad){
+	float seno;
+	return seno;
+}
+
+void grafico(){
+	int i, j;
+	for(i=0; i<10; i++ ){
+		printf("|");
+		printf("-");
+		if(i == 9){
+			printf("\nO");
+			for(j = 0; j<20; j++){
+				printf("--");
+				printf("|");			
+			}
+		}
+		printf("\n");
+	}
+}
+
 
 int main(){
-	float num1;
-	printf("Digite um número para calcularmos a raiz quadrada: ");
-	scanf("%f", &num1);
-	printf("Resultado: %f\t Quadrado:%f ", raiz2(num1), eleva(raiz2(num1), 2));
-	/*float num1;
-	printf("Digite um número: ");
-	scanf("%f", &num1);
-	printf("O valor aproximado de [%f] é igual a %d\n", num1,aproxima(num1))*/;
+	float x1, x2 = baskhara(2, 3, 5);
+
 	return 0;
 }
 
